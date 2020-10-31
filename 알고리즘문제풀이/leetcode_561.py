@@ -26,6 +26,7 @@ class Solution:
                 tmp = nums[i]
             else :
                 answer = answer + min(tmp, nums[i])
+<<<<<<< HEAD
         return answer
 
 
@@ -39,3 +40,6 @@ class Solution:
             answer += nums[i*2]
 
         return answer
+=======
+        return answer
+>>>>>>> 47dcbbcf73b9b4bb78101b6c4c77dab5b83c03dd
