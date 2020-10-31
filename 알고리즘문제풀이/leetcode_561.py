@@ -13,3 +13,17 @@ class Solution:
             except:
                 break
         return temp
+
+
+# 재호
+class Solution:
+    def arrayPairSum(self, nums: List[int]) -> int:
+        answer = 0
+        nums = sorted(nums)
+
+        for i in range(len(nums)):
+            if i % 2 == 0 :
+                tmp = nums[i]
+            else :
+                answer = answer + min(tmp, nums[i])
+        return answer
