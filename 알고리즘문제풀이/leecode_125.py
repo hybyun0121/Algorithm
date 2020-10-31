@@ -52,3 +52,28 @@ class Solution:
             if strs.popleft() != strs.pop(): # O(1) + O(1)
                 return False
         return True
+
+
+# 재호
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        flag = False
+        s = s.lower()
+        s = list(s)
+
+
+        for i in range(len(s)-1, -1, -1) :
+            if not s[i].isalnum():
+                del s[i]
+
+        if not s :
+            return True
+        elif len(s) == 1:
+            return True
+
+        for i in range(len(s)//2) :
+            if s[i] != s[len(s)-1-i] :
+                return False
+            else :
+                flag = True
+        return flag
