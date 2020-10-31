@@ -53,3 +53,16 @@ class Solution:
         answer = sorted(answer, key=lambda x : len(x))
 
         return answer
+
+# HY
+class Solution:
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        _dict = dict()
+        for s in strs:
+            key = ''.join(sorted(s))
+            if key in list(_dict.keys()):
+                _dict[key].append(s)
+            else:
+                _dict[key] = [s]
+
+        return list(_dict.values())
