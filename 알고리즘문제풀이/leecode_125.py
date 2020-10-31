@@ -34,3 +34,21 @@ s
 s=re.sub('[^a-zA-Z0-9]','',s)
 s
 
+
+# 민채
+
+# deque
+from collections import deque
+
+class Solution:
+    def isPalindrome(self, s: str) -> bool:
+        strs = deque()
+        for character in s:
+            if character.isalnum() is True:
+                strs.append(character.lower())
+            # deque[a,m,a,n,a,p,l,a,n,a,c,a,n,a,l]
+                
+        while len(strs) > 1:
+            if strs.popleft() != strs.pop(): # O(1) + O(1)
+                return False
+        return True
