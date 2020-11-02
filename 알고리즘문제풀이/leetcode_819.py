@@ -26,3 +26,16 @@ class Solution:
         for w, _ in word_dict:
             if not w in banned and w is not "":
                 return w
+
+# jh
+import re
+from collections import Counter
+class Solution:
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        paragraph = paragraph.lower()
+        paragraph = re.sub('[^a-zA-Z0-9]', ' ', paragraph).split()
+        cnt = dict(Counter(paragraph))
+
+        for key, _ in sorted(cnt.items(), key=lambda x: x[1], reverse=True):
+            if key not in banned:
+                return key

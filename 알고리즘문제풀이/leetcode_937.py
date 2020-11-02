@@ -33,4 +33,19 @@ class Solution:
         output.sort(key=lambda x: x.split(' ')[1:])
         return output + digs
 
+# jh
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        answer = []
+        l_log, d_log = [], []
 
+        for i in range(len(logs)-1, -1, -1) :
+            if not logs[i].split()[1].isnumeric():
+                l_log.append(logs.pop(i))
+            else:
+                continue
+
+        l_log.sort(key=lambda x : x.split()[1:])
+        l_log.extend(logs)
+
+        return l_log
