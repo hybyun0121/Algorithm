@@ -18,3 +18,19 @@ class Solution:
         temp_let.sort()
         temp_let.sort(key = lambda x: x.split()[1:])
         return temp_let + temp_dig
+
+# HY
+class Solution:
+    def reorderLogFiles(self, logs: List[str]) -> List[str]:
+        output = []
+        digs = []
+        for i in range(len(logs)):
+            try:
+                int(logs[i].split(' ')[1])
+                digs.append(logs[i])
+            except:
+                output.append(logs[i])
+        output.sort(key=lambda x: x.split(' ')[1:])
+        return output + digs
+
+

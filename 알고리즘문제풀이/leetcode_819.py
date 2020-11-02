@@ -1,3 +1,4 @@
+# 민채
 class Solution:
     import re
     from collections import Counter
@@ -10,3 +11,18 @@ class Solution:
         counter = Counter(words)
         # 가장 많이 나온 단어 리턴
         return counter.most_common(1)[0][0]
+
+# HY
+from collections import Counter
+import re
+
+class Solution:
+    def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
+        paragraph = paragraph.lower()
+        paragraph = re.sub('[^a-zA-Z]+',' ', paragraph)
+        word_list = paragraph.split(' ')
+        word_dict = Counter(word_list)
+        word_dict = sorted(word_dict.items(), key = lambda x:x[1], reverse=True)
+        for w, _ in word_dict:
+            if not w in banned and w is not "":
+                return w
