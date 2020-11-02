@@ -20,4 +20,8 @@ class Solution:
                 s[i] = s[-1*i-1]
                 s[-1*i-1] = k
 
-
+# jh
+class Solution:
+    class Solution:
+        def reverseString(self, s: List[str]) -> None:
+            s.reverse()
